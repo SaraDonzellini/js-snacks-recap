@@ -21,21 +21,14 @@
         for (let i = 0; i < 10; i++) {
           axios.get("https://flynn.boolean.careers/exercises/api/random/name")
             .then((response) => {
-              
               console.log(response.data.response)
               this.guests.push(response.data.response)
-                
-              
             })
-        
-          
         }
-        console.log(this.guests)
       },
       checkName(){
         if (this.guests.includes = this.userName.toLowerCase()) {
           alert('benvenuto')
-
         } else {
           alert('non sei invitato')
         }
