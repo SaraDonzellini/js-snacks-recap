@@ -11,7 +11,7 @@ createApp({
     return {
       userNumber: 0,
       numbers: [],
-      sum : 0,
+      sum: 0,
     }
   },
 
@@ -19,24 +19,15 @@ createApp({
     getNumbers() {
       axios.get(`https://flynn.boolean.careers/exercises/api/array/integers?min=1&max=100&items=${this.userNumber}`)
         .then((response) => {
-          console.log(response.data.response)
-          this.numbers.push(response.data.response)
+          this.sum = 0;
+          this.numbers = response.data.response;
+          if (this.numbers.length == this.userNumber) {
+            for (let i = 0; i < this.numbers.length; i++) {
+              this.sum += parseInt((this.numbers[i]), 10);
+            }
+          }
         })
 
-        setTimeout(() => {
-          for (let i = 0; i < this.numbers.length; i++) {
-            this.sum += parseInt(this.numbers, 10)
-            
-          }
-          console.log(this.sum)
-          
-        }, 2000);
-        
     },
-
-
-    created() {
-    }
-
   }
 }).mount('#app')

@@ -1,3 +1,9 @@
+body{
+  background-color: darkslateblue;
+  color: white;
+}
+
 input {
   margin: 1rem;
 }
+
